@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "X 미디어 다운로더",
+  "description": "X 게시물의 원본 사진과 최고 비트레이트 MP4를 한 번에 다운로드합니다.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["downloads"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["media.js", "capture.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# 로컬 개발 설정과 생성 파일
+/.codex/
+/graphify-out/
+node_modules/
+coverage/
+*.log
+
+# Chrome 확장 패키지와 서명 키
+*.crx
+*.pem
+
+# 운영체제 메타데이터
+.DS_Store
+Thumbs.db
+Desktop.ini
